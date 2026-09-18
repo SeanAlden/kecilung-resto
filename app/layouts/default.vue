@@ -1,30 +1,24 @@
-<template>
+<!-- <template>
   <div class="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-800">
     
-    <!-- HEADER / NAVBAR -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <!-- Brand / Logo -->
         <NuxtLink to="/" class="text-2xl font-extrabold text-orange-600 tracking-wide">
           Kecilung Resto
         </NuxtLink>
 
-        <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-8 items-center font-medium">
           <NuxtLink to="/" class="hover:text-orange-500 transition-colors">Home</NuxtLink>
           <NuxtLink to="/about" class="hover:text-orange-500 transition-colors">About Us</NuxtLink>
 
-          <!-- Dropdown: Our Menu -->
           <div class="relative group py-4">
             <button class="flex items-center gap-1 hover:text-orange-500 transition-colors focus:outline-none">
               Our Menu
-              <!-- Ikon panah bawah (SVG) -->
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             
-            <!-- Isi Dropdown (Muncul saat group-hover) -->
             <div class="absolute left-0 mt-4 w-52 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
               <div class="py-2">
                 <NuxtLink to="/menu/main-course" class="block px-4 py-2 text-sm hover:bg-orange-50 hover:text-orange-600 transition-colors">Main Course</NuxtLink>
@@ -41,7 +35,6 @@
           <NuxtLink to="/articles" class="hover:text-orange-500 transition-colors">Articles</NuxtLink>
         </nav>
 
-        <!-- Mobile Menu Button (Hamburger) -->
         <button class="md:hidden flex items-center text-gray-600 hover:text-orange-600 focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -50,17 +43,13 @@
       </div>
     </header>
 
-    <!-- MAIN CONTENT (Slot Nuxt) -->
-    <!-- Elemen 'flex-grow' memastikan konten akan mengisi ruang kosong, mendorong footer selalu ke bawah -->
     <main class="flex-grow">
       <slot />
     </main>
 
-    <!-- FOOTER -->
     <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-          <!-- Kolom 1: Tentang Kami -->
           <div>
             <h3 class="text-xl font-bold text-white mb-4">Kecilung Resto</h3>
             <p class="text-sm leading-relaxed text-gray-400">
@@ -68,7 +57,6 @@
             </p>
           </div>
           
-          <!-- Kolom 2: Tautan Cepat -->
           <div>
             <h3 class="text-lg font-semibold text-white mb-4">Tautan Cepat</h3>
             <ul class="space-y-2 text-sm">
@@ -79,7 +67,6 @@
             </ul>
           </div>
           
-          <!-- Kolom 3: Kontak -->
           <div>
             <h3 class="text-lg font-semibold text-white mb-4">Hubungi Kami</h3>
             <ul class="space-y-3 text-sm text-gray-400">
@@ -95,7 +82,6 @@
           </div>
         </div>
         
-        <!-- Garis Pemisah & Copyright -->
         <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
           <p>&copy; {{ new Date().getFullYear() }} Kecilung Resto. All rights reserved.</p>
           <div class="flex space-x-4 mt-4 md:mt-0">
@@ -105,6 +91,22 @@
         </div>
       </div>
     </footer>
+  </div>
+</template> -->
+
+<template>
+  <div class="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-800">
+    
+    <!-- Komponen Header Otomatis Dipanggil -->
+    <AppHeader />
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Komponen Footer Otomatis Dipanggil -->
+    <AppFooter />
     
   </div>
 </template>
