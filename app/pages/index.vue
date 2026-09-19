@@ -12,7 +12,7 @@
       <!-- Background Image with Overlay -->
       <div class="absolute inset-0 z-0">
         <!-- Ganti src ini dengan gambar interior mewah atau hidangan andalan Anda di folder public -->
-        <img src="/hero-banner.webp" alt="Kecilung Resto Ambience" class="w-full h-full object-cover" />
+        <img src="/assets/images/home-banner.png" alt="Kecilung Resto Ambience" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
       </div>
 
@@ -86,8 +86,8 @@
         </div>
         <!-- Images Composition -->
         <div class="lg:w-1/2 relative">
-          <img src="/signature-dish.webp" alt="Signature Dish" class="w-4/5 rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500" />
-          <img src="/ambience-2.webp" alt="Resto Ambience" class="w-3/5 absolute -bottom-10 -right-4 rounded-2xl shadow-xl border-4 border-white transform hover:scale-105 transition-transform duration-500 z-20" />
+          <img src="/assets/images/homeabout.png" alt="Signature Dish" class="w-4/5 rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500" />
+          <img src="/assets/images/ayam-goreng-home.png" alt="Resto Ambience" class="w-3/5 absolute -bottom-10 -right-4 rounded-2xl shadow-xl border-4 border-white transform hover:scale-105 transition-transform duration-500 z-20" />
           <div class="absolute -top-6 -left-6 w-32 h-32 bg-orange-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
         </div>
       </div>
