@@ -43,19 +43,19 @@
 </template> -->
 
 <template>
-  <header class="bg-red-500 shadow-sm sticky top-0 z-50">
+  <header class="bg-red-800 shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <NuxtLink to="/">
         <img src="/assets/images/kecilung_logo.webp" alt="Kecilung Resto" class="h-12 w-auto object-contain" />
       </NuxtLink>
 
       <nav class="hidden md:flex space-x-8 items-center font-medium">
-        <NuxtLink to="/" class="hover:text-orange-500 transition-colors">Home</NuxtLink>
-        <NuxtLink to="/about" class="hover:text-orange-500 transition-colors">About Us</NuxtLink>
+        <NuxtLink to="/" class="text-white hover:text-orange-500 transition-colors">Home</NuxtLink>
+        <NuxtLink to="/about" class="text-white hover:text-orange-500 transition-colors">About Us</NuxtLink>
 
         <!-- Dropdown: Our Menu Dinamis -->
         <div class="relative group py-4">
-          <button class="flex items-center gap-1 hover:text-orange-500 transition-colors focus:outline-none">
+          <button class="text-white flex items-center gap-1 hover:text-orange-500 transition-colors focus:outline-none">
             Our Menu
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -80,9 +80,9 @@
           </div>
         </div>
 
-        <NuxtLink to="/catering" class="hover:text-orange-500 transition-colors">Catering</NuxtLink>
-        <NuxtLink to="/moment" class="hover:text-orange-500 transition-colors">Moment</NuxtLink>
-        <NuxtLink to="/article" class="hover:text-orange-500 transition-colors">Articles</NuxtLink>
+        <NuxtLink to="/catering" class="text-white hover:text-orange-500 transition-colors">Catering</NuxtLink>
+        <NuxtLink to="/moment" class="text-white hover:text-orange-500 transition-colors">Moment</NuxtLink>
+        <NuxtLink to="/article" class="text-white hover:text-orange-500 transition-colors">Articles</NuxtLink>
       </nav>
 
       <button class="md:hidden flex items-center text-gray-600 hover:text-orange-600 focus:outline-none">
