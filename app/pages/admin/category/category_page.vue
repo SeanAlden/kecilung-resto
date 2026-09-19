@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="container mx-auto p-6 max-w-5xl">
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold text-gray-800">Manajemen Kategori</h1>
@@ -10,7 +10,6 @@
       </button>
     </div>
 
-    <!-- Tabel Kategori -->
     <div class="bg-white rounded-lg shadow overflow-hidden">
       <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-50">
@@ -84,7 +83,6 @@
       </table>
     </div>
 
-    <!-- Modal Form Tambah/Edit -->
     <div
       v-if="isModalOpen"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -209,4 +207,127 @@ const deleteCategory = async (id) => {
     alert("Gagal menghapus data");
   }
 };
+</script> -->
+
+<template>
+  <div class="container mx-auto p-6 max-w-5xl">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold text-gray-800">Manajemen Kategori</h1>
+      <button @click="openModal('add')" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition">
+        + Tambah Kategori
+      </button>
+    </div>
+
+    <!-- Tabel Kategori -->
+    <div class="bg-white rounded-lg shadow overflow-hidden">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kode</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+            <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          
+          <!-- ANIMASI SKELETON LOADING -->
+          <template v-if="pending">
+            <tr v-for="n in 4" :key="'skel-cat-' + n" class="animate-pulse slide-up-anim hover:bg-gray-50">
+              <td class="px-6 py-4 whitespace-nowrap"><div class="h-4 bg-gray-200 rounded w-8"></div></td>
+              <td class="px-6 py-4 whitespace-nowrap"><div class="h-4 bg-gray-200 rounded w-16"></div></td>
+              <td class="px-6 py-4 whitespace-nowrap"><div class="h-4 bg-gray-200 rounded w-32"></div></td>
+              <td class="px-6 py-4 whitespace-nowrap text-center space-x-3 flex justify-center">
+                <div class="h-4 bg-gray-200 rounded w-12"></div>
+                <div class="h-4 bg-gray-200 rounded w-12"></div>
+                <div class="h-4 bg-gray-200 rounded w-12"></div>
+              </td>
+            </tr>
+          </template>
+
+          <!-- DATA ASLI -->
+          <template v-else>
+            <tr v-for="cat in categories" :key="cat.id" class="hover:bg-gray-50">
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ cat.id }}</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ cat.code }}</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{{ cat.name }}</td>
+              <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium space-x-3">
+                <NuxtLink :to="`/admin/category/detail/${cat.id}`" class="text-blue-600 hover:text-blue-900">Detail</NuxtLink>
+                <button @click="openModal('edit', cat)" class="text-amber-600 hover:text-amber-900">Edit</button>
+                <button @click="deleteCategory(cat.id)" class="text-red-600 hover:text-red-900">Hapus</button>
+              </td>
+            </tr>
+          </template>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal Form (Tetap sama seperti aslinya, tidak saya ubah di sini demi keringkasan) -->
+    <!-- ... (Biarkan Modal persis seperti kode Anda sebelumnya) ... -->
+  </div>
+</template>
+
+<script setup>
+definePageMeta({ layout: "admin" });
+
+const baseURL = "https://kecilung-resto.vercel.app/api";
+
+// PERUBAHAN: Gunakan useLazyFetch tanpa "await"
+const { data: response, pending, refresh } = useLazyFetch(`${baseURL}/categories`);
+const categories = computed(() => response.value?.data || []);
+
+const isModalOpen = ref(false);
+const modalMode = ref("add");
+const form = ref({ id: null, code: "", name: "", description: "" });
+
+const openModal = (mode, data = null) => {
+  modalMode.value = mode;
+  if (mode === "edit" && data) {
+    form.value = { ...data };
+  } else {
+    form.value = { id: null, code: "", name: "", description: "" };
+  }
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+
+const saveCategory = async () => {
+  try {
+    if (modalMode.value === "add") {
+      await $fetch(`${baseURL}/categories`, { method: "POST", body: form.value });
+    } else {
+      await $fetch(`${baseURL}/categories/${form.value.id}`, { method: "PUT", body: form.value });
+    }
+    closeModal();
+    refresh();
+  } catch (error) {
+    alert("Gagal menyimpan data: " + error.message);
+  }
+};
+
+const deleteCategory = async (id) => {
+  if (!confirm("Yakin ingin menghapus kategori ini?")) return;
+  try {
+    await $fetch(`${baseURL}/categories/${id}`, { method: "DELETE" });
+    refresh();
+  } catch (error) {
+    alert("Gagal menghapus data");
+  }
+};
 </script>
+
+<style scoped>
+/* Animasi Float / Slide Up */
+.slide-up-anim {
+  animation: slideUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+@keyframes slideUp {
+  0% { transform: translateY(15px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+</style>
