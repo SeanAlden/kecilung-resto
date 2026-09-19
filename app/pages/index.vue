@@ -36,9 +36,9 @@
             Pesan Layanan Katering
           </NuxtLink>
         </div>
-        <p class="mt-6 text-sm text-orange-300 animate-pulse font-medium">
+        <!-- <p class="mt-6 text-sm text-orange-300 animate-pulse font-medium">
           🔥 Tersisa 3 slot meja VIP untuk reservasi malam ini!
-        </p>
+        </p> -->
       </div>
     </section>
 
