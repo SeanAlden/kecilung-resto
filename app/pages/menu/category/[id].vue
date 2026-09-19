@@ -66,11 +66,15 @@ const categoryId = route.params.id;
 const baseURL = "https://kecilung-resto.vercel.app/api";
 
 // 1. Fetch Menu berdasarkan ID Kategori
-const { data: menuResponse, pending } = useLazyFetch(`${baseURL}/menus/category/${categoryId}`);
+const { data: menuResponse, pending } = useFetch(`${baseURL}/menus/category/${categoryId}`, {
+  lazy: import.meta.client // <-- Kunci Rahasianya ada di sini
+});
 const menus = computed(() => menuResponse.value?.data || []);
 
 // 2. Fetch data nama kategori secara paralel untuk judul banner
-const { data: categoryResponse } = useLazyFetch(`${baseURL}/categories`);
+const { data: categoryResponse } = useFetch(`${baseURL}/categories`, {
+  lazy: import.meta.client // <-- Kunci Rahasianya ada di sini
+});
 const currentCategoryName = computed(() => {
   const cats = categoryResponse.value?.data || [];
   const found = cats.find(c => c.id == categoryId);

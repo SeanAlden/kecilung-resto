@@ -96,6 +96,8 @@
 
 <script setup>
 const baseURL = "https://kecilung-resto.vercel.app/api";
-const { data: response, pending } = useLazyFetch(`${baseURL}/categories`);
+const { data: response, pending } = useFetch(`${baseURL}/categories`, {
+  lazy: import.meta.client
+});
 const categories = computed(() => response.value?.data || []);
 </script>

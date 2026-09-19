@@ -159,7 +159,9 @@ const route = useRoute();
 const baseURL = "https://kecilung-resto.vercel.app/api";
 
 // Fetch data menggunakan useLazyFetch agar tidak freeze saat pindah halaman
-const { data: res, pending } = useLazyFetch(`${baseURL}/catering/packages/${route.params.id}`);
+const { data: res, pending } = useFetch(`${baseURL}/catering/packages/${route.params.id}`, {
+  lazy: import.meta.client
+});
 const catering = computed(() => res.value?.data);
 
 // Manajemen Gambar Aktif di Galeri
