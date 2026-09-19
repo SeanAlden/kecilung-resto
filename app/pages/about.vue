@@ -14,7 +14,7 @@
       <div class="lg:w-1/2 relative group">
         <div class="absolute inset-0 bg-orange-200 rounded-2xl transform translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
         <img 
-          src="assets/images/gedung.webp" 
+          src="/assets/images/gedung.webp" 
           alt="Gedung Kecilung Kitchen & Resto" 
           class="w-full h-[400px] object-cover rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-[1.02]" 
         />
@@ -30,7 +30,7 @@
       </div>
       <div class="lg:w-1/2 order-1 lg:order-2 mb-8 lg:mb-0">
         <img 
-          src="assets/images/aboutus1.webp" 
+          src="/assets/images/aboutus1.webp" 
           alt="Suasana Kecilung 1" 
           class="w-full h-80 md:h-[400px] object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300" 
         />
@@ -42,7 +42,7 @@
       <div class="container mx-auto px-6 lg:flex lg:items-center lg:gap-16">
         <div class="lg:w-1/2 mb-8 lg:mb-0">
           <img 
-            src="assets/images/aboutus2.webp" 
+            src="/assets/images/aboutus2.webp" 
             alt="Hidangan Kecilung" 
             class="w-full h-80 md:h-[400px] object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300" 
           />
@@ -64,7 +64,7 @@
       </div>
       <div class="lg:w-1/2 order-1 lg:order-2 mb-8 lg:mb-0">
         <img 
-          src="assets/images/aboutus3.webp" 
+          src="/assets/images/aboutus3.webp" 
           alt="Interior Klasik Kecilung" 
           class="w-full h-80 md:h-[400px] object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300" 
         />
