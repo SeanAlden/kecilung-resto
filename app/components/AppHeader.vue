@@ -82,7 +82,7 @@
 
         <NuxtLink to="/catering" class="hover:text-orange-500 transition-colors">Catering</NuxtLink>
         <NuxtLink to="/moment" class="hover:text-orange-500 transition-colors">Moment</NuxtLink>
-        <NuxtLink to="/articles" class="hover:text-orange-500 transition-colors">Articles</NuxtLink>
+        <NuxtLink to="/article" class="hover:text-orange-500 transition-colors">Articles</NuxtLink>
       </nav>
 
       <button class="md:hidden flex items-center text-gray-600 hover:text-orange-600 focus:outline-none">
