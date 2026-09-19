@@ -171,13 +171,12 @@
 
         <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           <!-- Mapping Kategori dari API -->
-          <NuxtLink 
+          <!-- <NuxtLink 
             v-for="cat in (categories.slice(0,4))" 
             :key="cat.id"
             :to="`/menu/category/${cat.id}`"
             class="relative h-48 md:h-64 rounded-2xl overflow-hidden group block"
           >
-            <!-- Karena di backend kategori tidak punya image, kita bisa berikan warna unik atau letakkan pattern -->
             <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 transition-transform duration-500 group-hover:scale-110 flex items-center justify-center p-4">
               <span class="text-6xl opacity-10 absolute right-[-10px] bottom-[-10px] transform group-hover:rotate-12 transition-transform">🍽️</span>
             </div>
@@ -185,6 +184,37 @@
             <div class="absolute inset-0 flex flex-col justify-end p-6">
               <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">{{ cat.name }}</h3>
               <p class="text-sm text-gray-300 mt-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Lihat Daftar Menu &rarr;</p>
+            </div>
+          </NuxtLink> -->
+
+          <!-- Mapping Kategori dari API -->
+          <NuxtLink 
+            v-for="cat in (categories.slice(0,4))" 
+            :key="cat.id"
+            :to="`/menu/category/${cat.id}`"
+            class="relative h-48 md:h-64 rounded-2xl overflow-hidden group block shadow-lg"
+          >
+            <!-- Background Kategori Terhubung dengan API -->
+            <img 
+              v-if="cat.image_url" 
+              :src="cat.image_url" 
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              :alt="cat.name"
+            />
+            <!-- Fallback Jika Belum Ada Gambar -->
+            <div v-else class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 transition-transform duration-500 group-hover:scale-110 flex items-center justify-center p-4">
+              <span class="text-6xl opacity-10 absolute right-[-10px] bottom-[-10px] transform group-hover:rotate-12 transition-transform">🍽️</span>
+            </div>
+
+            <!-- Overlay & Text -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:bg-black/30 transition-colors duration-300"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-orange-400 transition-colors drop-shadow-md">
+                {{ cat.name }}
+              </h3>
+              <p class="text-sm text-orange-300 mt-1 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 font-medium">
+                Lihat Daftar Menu &rarr;
+              </p>
             </div>
           </NuxtLink>
         </div>
