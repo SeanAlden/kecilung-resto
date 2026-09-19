@@ -11,7 +11,6 @@
     <section class="relative h-screen flex items-center justify-center">
       <!-- Background Image with Overlay -->
       <div class="absolute inset-0 z-0">
-        <!-- Ganti src ini dengan gambar interior mewah atau hidangan andalan Anda di folder public -->
         <img src="/assets/images/home-banner.png" alt="Kecilung Resto Ambience" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
       </div>
@@ -89,6 +88,71 @@
           <img src="/assets/images/homeabout.png" alt="Signature Dish" class="w-4/5 rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500" />
           <img src="/assets/images/ayam-goreng-home.png" alt="Resto Ambience" class="w-3/5 absolute -bottom-10 -right-4 rounded-2xl shadow-xl border-4 border-white transform hover:scale-105 transition-transform duration-500 z-20" />
           <div class="absolute -top-6 -left-6 w-32 h-32 bg-orange-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <section class="py-24 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <span class="text-orange-500 font-bold tracking-widest uppercase text-sm block mb-2">— TESTIMONI</span>
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Pengalaman Pelanggan</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+            Dengarkan pengalaman pelanggan yang telah menikmati hidangan terbaik kami dengan cita rasa autentik dan pelayanan yang memuaskan.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          
+          <!-- Testimoni 1 -->
+          <div class="bg-stone-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 relative group transform hover:-translate-y-2">
+            <div class="text-orange-200 text-6xl absolute top-4 right-6 font-serif opacity-50 group-hover:text-orange-300 transition-colors">"</div>
+            <div class="text-yellow-400 text-xl tracking-widest mb-6">★★★★★</div>
+            <p class="text-gray-700 leading-relaxed mb-8 relative z-10 italic">
+              "Makanannya benar-benar lezat dan penyajiannya sangat elegan. Suasana restorannya juga nyaman dan cocok untuk keluarga."
+            </p>
+            <div class="flex items-center gap-4 mt-auto">
+              <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-bold text-xl">R</div>
+              <div>
+                <h4 class="font-bold text-gray-900">Rina Maharani</h4>
+                <p class="text-sm text-gray-500">Pelanggan Setia</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimoni 2 -->
+          <div class="bg-stone-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 relative group transform hover:-translate-y-2">
+            <div class="text-orange-200 text-6xl absolute top-4 right-6 font-serif opacity-50 group-hover:text-orange-300 transition-colors">"</div>
+            <div class="text-yellow-400 text-xl tracking-widest mb-6">★★★★★</div>
+            <p class="text-gray-700 leading-relaxed mb-8 relative z-10 italic">
+              "Sop buntutnya juara! Dagingnya empuk dan kuahnya kaya rempah. Pasti akan kembali lagi untuk mencoba menu lainnya."
+            </p>
+            <div class="flex items-center gap-4 mt-auto">
+              <div class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl">B</div>
+              <div>
+                <h4 class="font-bold text-gray-900">Budi Santoso</h4>
+                <p class="text-sm text-gray-500">Food Enthusiast</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimoni 3 -->
+          <div class="bg-stone-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 relative group transform hover:-translate-y-2">
+            <div class="text-orange-200 text-6xl absolute top-4 right-6 font-serif opacity-50 group-hover:text-orange-300 transition-colors">"</div>
+            <div class="text-yellow-400 text-xl tracking-widest mb-6">★★★★<span class="text-gray-300">☆</span></div>
+            <p class="text-gray-700 leading-relaxed mb-8 relative z-10 italic">
+              "Pelayanan sangat ramah dan cepat. Tempatnya bersih dan instagramable. Cocok untuk acara spesial bersama teman."
+            </p>
+            <div class="flex items-center gap-4 mt-auto">
+              <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xl">I</div>
+              <div>
+                <h4 class="font-bold text-gray-900">Intan Permata</h4>
+                <p class="text-sm text-gray-500">Pengunjung</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
