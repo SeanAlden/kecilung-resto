@@ -43,7 +43,7 @@
 </template> -->
 
 <template>
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <header class="bg-red-500 shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <NuxtLink to="/">
         <img src="/assets/images/kecilung_logo.webp" alt="Kecilung Resto" class="h-12 w-auto object-contain" />
