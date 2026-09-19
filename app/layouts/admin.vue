@@ -16,7 +16,7 @@
         </NuxtLink>
         
         <!-- Tambahan Menu Manajemen Katering -->
-        <NuxtLink to="/admin/catering/booking_page" class="block py-2.5 px-4 rounded transition-colors hover:bg-gray-800" active-class="bg-gray-800 text-orange-400">
+        <NuxtLink to="/admin/catering/catering_page" class="block py-2.5 px-4 rounded transition-colors hover:bg-gray-800" active-class="bg-gray-800 text-orange-400">
           Manajemen Katering
         </NuxtLink>
       </nav>
