@@ -14,6 +14,11 @@
         <NuxtLink to="/admin/menu/menu_page" class="block py-2.5 px-4 rounded transition-colors hover:bg-gray-800" active-class="bg-gray-800 text-orange-400">
           Manajemen Menu
         </NuxtLink>
+        
+        <!-- Tambahan Menu Manajemen Katering -->
+        <NuxtLink to="/admin/catering/booking_page" class="block py-2.5 px-4 rounded transition-colors hover:bg-gray-800" active-class="bg-gray-800 text-orange-400">
+          Manajemen Katering
+        </NuxtLink>
       </nav>
       <div class="p-4 border-t border-gray-800">
         <NuxtLink to="/" class="text-sm text-gray-400 hover:text-white transition-colors">
